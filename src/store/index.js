@@ -1,8 +1,9 @@
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
-
+import produceReducer from './produce';
 const rootReducer = combineReducers({
-
+produce:produceReducer
 });
+
 let enhancer;
 
 if (process.env.NODE_ENV !== "production") {
@@ -17,4 +18,3 @@ const configureStore = (preloadedState) => {
   };
 
   export default configureStore;
-  
